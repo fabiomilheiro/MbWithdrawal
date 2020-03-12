@@ -30,7 +30,7 @@ namespace Moneybox.App.Features
             {
                 this.notificationService.NotifyFundsLow(from.User.Email);
             }
-
+            // TODO: If we don't send the money, then it makes no sense to notify the user about low balance, right?
             var paidIn = to.PaidIn + amount;
             if (paidIn > Account.PayInLimit)
             {
