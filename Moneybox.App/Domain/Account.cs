@@ -25,7 +25,7 @@ namespace Moneybox.App
                 throw new InvalidOperationException("Insufficient funds to make transfer");
             }
 
-            this.Balance -= newBalance;
+            this.Balance = newBalance;
             this.Withdrawn -= amount;
         }
 
