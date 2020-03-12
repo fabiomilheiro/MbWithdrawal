@@ -31,8 +31,8 @@ On github: https://github.com/fabiomilheiro/MoneyboxWithdrawal. You may see my a
 
 1. Created tests for `TransferMoneyTests` in order to ensure we can easily change the implementation and be confident that everything keeps working according to the specification.
 2. Moved logic to the `Account` instance methods `Withdraw`, `NotifyIfFundsLow`, `PayIn` and `NotifyIfPaInLimitIsClose`.
-3. Could have included the notification methods inside the `Withdraw` and `PaIn` methods but wasn't that would fit the desired business result.
-Normally, I'd ask the business if we should the low balance notification without confirming if all validations had already passed.
+3. Could have included the notification methods inside the `Withdraw` and `PayIn` methods but wasn't sure if that would fit the desired business result.
+Normally, I'd ask the business if we should send the low balance notification without confirming if all validations had already passed.
 4. After that, implementing the `WithdrawMoney.Execute` method using TDD approach was fast and easy.
 
 If you have any questions, please let me know.
