@@ -66,6 +66,7 @@ namespace Moneybox.App.Tests.Features
             Action action = () => this.sut.Execute(this.account1.Id, this.account2.Id, this.account1.Balance + 1);
 
             action.Should().Throw<InvalidOperationException>().WithMessage("Insufficient funds*");
+            this.accountRepositoryMock.Verify(r => r.Update(It.IsAny<Account>()), Times.Never);
         }
 
         [Fact]
@@ -86,6 +87,7 @@ namespace Moneybox.App.Tests.Features
             Action action = ()=> this.sut.Execute(this.account1.Id, this.account2.Id, 101);
 
             action.Should().Throw<InvalidOperationException>().WithMessage("Account pay in limit reached*");
+            this.accountRepositoryMock.Verify(r => r.Update(It.IsAny<Account>()), Times.Never);
         }
 
         [Fact]

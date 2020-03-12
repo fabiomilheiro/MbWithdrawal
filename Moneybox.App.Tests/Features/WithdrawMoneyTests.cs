@@ -51,6 +51,7 @@ namespace Moneybox.App.Tests.Features
             Action action = () => this.sut.Execute(this.account.Id, this.account.Balance + 1);
 
             action.Should().Throw<InvalidOperationException>().WithMessage("Insufficient funds*");
+            this.accountRepositoryMock.Verify(r => r.Update(It.IsAny<Account>()), Times.Never);
         }
 
         [Fact]
